@@ -1,0 +1,1 @@
+const nav=document.querySelector('nav');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>24));document.querySelectorAll('.letter').forEach(x=>x.addEventListener('click',()=>{document.querySelectorAll('.letter').forEach(y=>y.classList.remove('active'));x.classList.add('active')}));
