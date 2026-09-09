@@ -19,10 +19,22 @@ if(aureliaCard){
   }
 }
 
-// Remove the obsolete/broken yacht image block from the luxury travel case study.
 document.querySelector('.campaign-image.tall')?.remove();
+document.querySelectorAll('.marketing-case img').forEach(img=>{img.addEventListener('error',()=>img.closest('.campaign-image,.campaign-hero-image')?.remove(),{once:true});});
 
-// Never leave a black/empty image container when an external campaign image fails.
-document.querySelectorAll('.marketing-case img').forEach(img=>{
-  img.addEventListener('error',()=>img.closest('.campaign-image,.campaign-hero-image')?.remove(),{once:true});
-});
+// Flagship projects: every major standalone experience is discoverable from the portfolio.
+const projectList=document.querySelector('.project-list');
+if(projectList){
+  const flagship=[
+    {num:'08',cls:'private-letter-visual',title:'The Private Letter',category:'Email marketing / Client nurturing',stack:'Editorial strategy · Conversion · UX',desc:'A private-club-inspired nurture experience turning thoughtful correspondence into a refined client acquisition journey.',url:'https://the-private-letter.onrender.com',cta:'Enter The Private Letter ↗',visual:'THE PRIVATE\nLETTER',note:'PRIVATE CORRESPONDENCE'},
+    {num:'09',cls:'journal-visual',title:'The Regina Journal',category:'Editorial / Writing / Creative technology',stack:'Art direction · Editorial UX · Storytelling',desc:'An independent editorial room for technology, beauty, ambition, culture and creation — art-directed as a publication, not a blog template.',url:'https://regina-journal.onrender.com',cta:'Enter The Regina Journal ↗',visual:'IDEAS WITH\nTEETH.',note:'ISSUE 01 / EDITORIAL ROOM'}
+  ];
+  flagship.forEach(f=>{
+    if(projectList.querySelector(`[data-flagship="${f.cls}"]`))return;
+    const el=document.createElement('article');el.className='project project-feature reveal';el.dataset.flagship=f.cls;
+    el.innerHTML=`<div class="project-visual ${f.cls}"><div class="flagship-art"><span>${f.note}</span><strong>${f.visual.replace('\\n','<br>')}</strong><i>↗</i></div><div class="flagship-scribble">crafted, not templated</div></div><div class="project-meta"><span>${f.num} · ${f.category}</span><span>${f.stack}</span></div><h3>${f.title}</h3><p>${f.desc}</p><a href="${f.url}" target="_blank" rel="noreferrer" class="project-link">${f.cta}</a>`;
+    projectList.appendChild(el);
+    observer.observe(el);
+    const visual=el.querySelector('.project-visual');visual.addEventListener('mousemove',e=>{if(innerWidth<900)return;const r=visual.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;visual.style.transform=`perspective(900px) rotateX(${y*-2.2}deg) rotateY(${x*2.2}deg) scale(.992)`});visual.addEventListener('mouseleave',()=>visual.style.transform='');
+  });
+}
