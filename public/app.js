@@ -1,3 +1,4 @@
+const mobileStyle=document.createElement('link');mobileStyle.rel='stylesheet';mobileStyle.href='mobile.css';document.head.appendChild(mobileStyle);
 const flagshipStyle=document.createElement('link');flagshipStyle.rel='stylesheet';flagshipStyle.href='flagship-projects.css';document.head.appendChild(flagshipStyle);
 
 const nav=document.querySelector('.nav');
