@@ -1,0 +1,1 @@
+{"name":"regina-kerubo-portfolio","private":true,"version":"1.0.0","scripts":{"start":"serve -s public -l $PORT"},"dependencies":{"serve":"^14.2.4"}}
