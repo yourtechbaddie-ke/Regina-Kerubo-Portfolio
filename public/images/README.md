@@ -10,9 +10,11 @@ Place the real portfolio project images in this folder. Render will serve them a
 - `northstar-ai-support.png`
 - `ride-or-die.png`
 - `the-price-of-passion.png`
-- `dark-couture.png`
+- `aurelia-journeys.png`
 - `regina-portrait.png`
 
 Keep filenames exactly as listed, use lowercase letters and hyphens, and prefer WebP or optimized PNG/JPG files.
+
+**Important:** The luxury travel campaign is **Aurelia Journeys**, not Dark Couture.
 
 Adding or replacing an image in this folder on the `main` branch will trigger the existing Render auto-deploy workflow, provided auto-deploy remains enabled on the Render service.
