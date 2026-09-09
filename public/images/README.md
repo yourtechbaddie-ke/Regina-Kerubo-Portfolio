@@ -9,7 +9,7 @@ Place the real portfolio project images in this folder. Render will serve them a
 - `northstar-retail-co.png`
 - `northstar-ai-support.png`
 - `ride-or-die.png`
-- `the-price-of-passion.png`
+- `the-price-of-passion.jpg`
 - `aurelia-journeys.png`
 - `regina-portrait.png`
 
