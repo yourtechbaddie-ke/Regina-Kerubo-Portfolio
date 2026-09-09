@@ -18,3 +18,11 @@ if(aureliaCard){
     if(link){link.textContent='Enter Aurelia Journeys ↗';link.href='https://aurelia-journeys.onrender.com';link.target='_blank';link.rel='noreferrer'}
   }
 }
+
+// Remove the obsolete/broken yacht image block from the luxury travel case study.
+document.querySelector('.campaign-image.tall')?.remove();
+
+// Never leave a black/empty image container when an external campaign image fails.
+document.querySelectorAll('.marketing-case img').forEach(img=>{
+  img.addEventListener('error',()=>img.closest('.campaign-image,.campaign-hero-image')?.remove(),{once:true});
+});
