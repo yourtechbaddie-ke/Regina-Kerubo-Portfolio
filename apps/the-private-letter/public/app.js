@@ -1,3 +1,5 @@
 const nav=document.querySelector('nav');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>24));
 const tabs=[...document.querySelectorAll('.tab')];const panels=[...document.querySelectorAll('.panel')];tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));panels.forEach(p=>p.classList.remove('active-panel'));tab.classList.add('active');document.getElementById(tab.dataset.panel)?.classList.add('active-panel')}));
 const reveal=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');reveal.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.kpi-row>div,.finding,.stack-card,.chart-card').forEach(el=>reveal.observe(el));
+// Keep portfolio-demo disclosure copy out of the finished campaign report footer.
+document.querySelectorAll('.report-footer strong').forEach(el=>{if(el.textContent.trim().toUpperCase()==='SIMULATED PORTFOLIO DATA')el.remove();});
