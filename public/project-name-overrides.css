@@ -1,0 +1,5 @@
+/* Approved centered project-name treatment — matched to The House of Her */
+.project-visual .project-name-label{position:absolute;inset:0;z-index:30;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;box-sizing:border-box;color:#000!important;font-family:'Playfair Display',serif!important;font-style:italic!important;font-weight:500!important;font-size:clamp(3.2rem,8vw,7.5rem)!important;line-height:.86!important;letter-spacing:-.045em!important;text-shadow:none!important;pointer-events:none}
+.project-visual .project-name-label br{display:block}
+.house-her-visual .project-name-label{color:#000!important}
+@media(max-width:800px){.project-visual .project-name-label{font-size:clamp(2.6rem,12vw,5rem)!important;padding:16px}}
