@@ -1,5 +1,6 @@
 const mobileStyle=document.createElement('link');mobileStyle.rel='stylesheet';mobileStyle.href='mobile.css';document.head.appendChild(mobileStyle);
 const flagshipStyle=document.createElement('link');flagshipStyle.rel='stylesheet';flagshipStyle.href='flagship-projects.css';document.head.appendChild(flagshipStyle);
+const premiumImages=document.createElement('link');premiumImages.rel='stylesheet';premiumImages.href='premium-project-images.css';document.head.appendChild(premiumImages);
 const nav=document.querySelector('.nav');
 const reveals=document.querySelectorAll('.reveal');
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -30px'});
