@@ -1,5 +1,26 @@
 /* Approved centered project-name treatment — matched to The House of Her */
 .project-visual .project-name-label{position:absolute;inset:0;z-index:30;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;box-sizing:border-box;color:#000!important;font-family:'Playfair Display',serif!important;font-style:italic!important;font-weight:500!important;font-size:clamp(3.2rem,8vw,7.5rem)!important;line-height:.86!important;letter-spacing:-.045em!important;text-shadow:none!important;pointer-events:none}
 .project-visual .project-name-label br{display:block}
-.house-her-visual .project-name-label{color:#000!important}
-@media(max-width:800px){.project-visual .project-name-label{font-size:clamp(2.6rem,12vw,5rem)!important;padding:16px}}
+/* The dynamically injected flagship cards replace their inner visual markup with imagery, so their names are rendered here. */
+.house-her-visual:after{content:'THE HOUSE\\A OF HER'}
+.private-letter-visual:after{content:'THE PRIVATE\\A LETTER'}
+.creators-table-visual:after{content:"THE CREATOR'S\\A TABLE"}
+.the-drop-visual:after{content:'THE\\A DROP'}
+.voyage-visual:after{content:'VOYAGE'}
+/* These two already have centered text; only correct the typography to the approved House of Her treatment. */
+.scroll-sale-visual .flagship-art strong,.regina-brands-visual .flagship-art strong{font-family:'Playfair Display',serif!important;font-style:italic!important;font-weight:500!important;color:#000!important;text-shadow:none!important}
+.scroll-sale-visual:after,.regina-brands-visual:after{display:none}
+.house-her-visual:after,.private-letter-visual:after,.creators-table-visual:after,.the-drop-visual:after,.voyage-visual:after{position:absolute;inset:0;z-index:30;display:flex;align-items:center;justify-content:center;white-space:pre-line;text-align:center;padding:24px;box-sizing:border-box;color:#000;font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:clamp(3.2rem,8vw,7.5rem);line-height:.86;letter-spacing:-.045em;text-shadow:none;pointer-events:none}
+/* Original project cards — centered names over the visual, excluding Ride or Die and The Price of Passion. */
+.project-list>.project:nth-child(8) .project-visual:after{content:'REFLEX CONTROL ROOM'}
+.project-list>.project:nth-child(9) .project-visual:after{content:'SOLSTICE EVENTS CO.'}
+.project-list>.project:nth-child(10) .project-visual:after{content:'NORTHSTAR RETAIL CO.'}
+.project-list>.project:nth-child(11) .project-visual:after{content:'NORTHSTAR AI SUPPORT'}
+.project-list>.project:nth-child(14) .project-visual:after{content:'AURELIA JOURNEYS'}
+.project-list>.project:nth-child(15) .project-visual:after{content:'CREATOR OS'}
+.project-list>.project:nth-child(16) .project-visual:after{content:'SECURE LOGIN LAB'}
+.project-list>.project:nth-child(17) .project-visual:after{content:'INCIDENT ZERO'}
+.project-list>.project:nth-child(18) .project-visual:after{content:'TABLE FOR TWO'}
+.project-list>.project:nth-child(19) .project-visual:after{content:'THE FIVE SENSES CAMPAIGN'}
+.project-list>.project:nth-child(8) .project-visual:after,.project-list>.project:nth-child(9) .project-visual:after,.project-list>.project:nth-child(10) .project-visual:after,.project-list>.project:nth-child(11) .project-visual:after,.project-list>.project:nth-child(14) .project-visual:after,.project-list>.project:nth-child(15) .project-visual:after,.project-list>.project:nth-child(16) .project-visual:after,.project-list>.project:nth-child(17) .project-visual:after,.project-list>.project:nth-child(18) .project-visual:after,.project-list>.project:nth-child(19) .project-visual:after{position:absolute;inset:0;z-index:30;display:flex;align-items:center;justify-content:center;white-space:pre-line;text-align:center;padding:24px;box-sizing:border-box;color:#000;font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:clamp(3.2rem,8vw,7.5rem);line-height:.86;letter-spacing:-.045em;text-shadow:none;pointer-events:none}
+@media(max-width:800px){.project-visual .project-name-label{font-size:clamp(2.6rem,12vw,5rem)!important;padding:16px}.house-her-visual:after,.private-letter-visual:after,.creators-table-visual:after,.the-drop-visual:after,.voyage-visual:after,.project-list>.project:nth-child(8) .project-visual:after,.project-list>.project:nth-child(9) .project-visual:after,.project-list>.project:nth-child(10) .project-visual:after,.project-list>.project:nth-child(11) .project-visual:after,.project-list>.project:nth-child(14) .project-visual:after,.project-list>.project:nth-child(15) .project-visual:after,.project-list>.project:nth-child(16) .project-visual:after,.project-list>.project:nth-child(17) .project-visual:after,.project-list>.project:nth-child(18) .project-visual:after,.project-list>.project:nth-child(19) .project-visual:after{font-size:clamp(2.6rem,12vw,5rem)}}
