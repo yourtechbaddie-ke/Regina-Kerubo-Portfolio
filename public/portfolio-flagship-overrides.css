@@ -1,5 +1,15 @@
 .private-letter-visual,.house-her-visual,.creators-table-visual,.the-drop-visual,.voyage-visual{background-image:none!important}.private-letter-visual{background-color:#17121b!important;color:#f8f1e8}.house-her-visual{background-color:#14100f!important;color:#f7f0e7}.creators-table-visual{background-color:#17151b!important;color:#fff8ef}.the-drop-visual{background-color:#210d17!important;color:#fff1e9}.voyage-visual{background-color:#0a171b!important;color:#f7f0e7}.flagship-image-shade{background:linear-gradient(180deg,rgba(8,8,12,.04),rgba(8,8,12,.46))!important}.project-visual img{transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .5s ease}.project-visual:hover img{transform:scale(1.045)!important;filter:saturate(1.03) contrast(1.02)}
-/* Artwork itself is image-only. Project names remain below each image. */
-.flagship-art,.flagship-art *{color:transparent!important;text-shadow:none!important}.flagship-art>span,.flagship-art>strong,.flagship-art>i,.flagship-art .flagship-scribble{display:none!important}.flagship-art:before,.flagship-art:after,.private-letter-visual:before,.journal-visual:after,.voyage-visual:after{content:none!important;display:none!important}.flagship-art{pointer-events:none!important}.flagship-art>img{display:block!important;opacity:1!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important}.house-her-visual .flagship-art{background:url('https://images.pexels.com/photos/20562278/pexels-photo-20562278.jpeg?auto=compress&cs=tinysrgb&w=1800') center/cover!important}.house-her-visual .flagship-art>img{opacity:1!important}
-/* Keep the actual project names visible beneath the artwork. */
-#work .project>h3{display:block!important}
+/* FINAL ARTWORK RULE: project names belong below the artwork, never inside it. */
+#work .project-visual::before,#work .project-visual::after{content:none!important;display:none!important}
+#work .project-visual .flagship-art>span,#work .project-visual .flagship-art>strong,#work .project-visual .flagship-art>i,#work .project-visual .flagship-scribble{display:none!important}
+#work .project-visual .flagship-art::before,#work .project-visual .flagship-art::after{content:none!important;display:none!important}
+#work .project-visual .flagship-art{pointer-events:none!important}
+#work .project-visual .flagship-art>img{display:block!important;opacity:1!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important}
+/* The six affected cards use artwork only: no generated labels, typography, badges or pseudo-elements over the image. */
+#work .house-her-visual *,#work .private-letter-visual *,#work .solstice *,#work .northstar *,#work .ai *{font-size:0!important;line-height:0!important}
+#work .house-her-visual img,#work .private-letter-visual img,#work .solstice img,#work .northstar img,#work .ai img{font-size:initial!important;line-height:initial!important}
+#work .house-her-visual .flagship-art,#work .private-letter-visual .flagship-art{font-size:0!important;line-height:0!important}
+#work .house-her-visual .flagship-art>img,#work .private-letter-visual .flagship-art>img{font-size:initial!important;line-height:initial!important}
+/* Preserve the approved project titles beneath every card. */
+#work .project>h3{display:block!important;font-size:clamp(26px,3vw,42px)!important;line-height:1.05!important}
+.house-her-visual .flagship-art{background:url('https://images.pexels.com/photos/20562278/pexels-photo-20562278.jpeg?auto=compress&cs=tinysrgb&w=1800') center/cover!important}.house-her-visual .flagship-art>img{opacity:1!important}
