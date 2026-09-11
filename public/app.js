@@ -44,15 +44,25 @@ const tools=document.createElement('section');tools.id='tools';tools.className='
 const skillsSection=document.querySelector('#skills');if(skillsSection&&!document.querySelector('#tools'))skillsSection.after(tools);
 const navSkills=document.querySelector('.nav nav a[href="#skills"]');if(navSkills){navSkills.textContent='Skills + Tools';navSkills.setAttribute('href','#skills');}
 
-// Contact links only: preserve the entire existing portfolio and make the existing footer contacts tappable.
+// Contact: Instagram belongs in the Contact section; WhatsApp is not rendered in the footer.
 (()=>{
-  const footer=document.querySelector('footer');
-  if(!footer || footer.querySelector('[data-rk-social-links]')) return;
-  const email=footer.querySelector('a[href^="mailto:"]');
-  const wrap=document.createElement('div');
-  wrap.dataset.rkSocialLinks='true';
-  wrap.style.cssText='display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:14px;';
-  wrap.innerHTML='<a href="https://wa.me/254706168307" target="_blank" rel="noreferrer" aria-label="WhatsApp Regina Kerubo">+254 706 168 307 ↗</a><a href="https://www.instagram.com/hernameis_rey/" target="_blank" rel="noreferrer" aria-label="Instagram hernameis_rey">Instagram · hernameis_rey ↗</a>';
-  if(email && email.parentElement) email.parentElement.appendChild(wrap);
-  else footer.appendChild(wrap);
+  const contact=document.querySelector('#contact');
+  if(contact&&!contact.querySelector('[data-rk-instagram]')){
+    const email=contact.querySelector('a[href^="mailto:"]');
+    if(email){
+      const link=document.createElement('a');
+      link.dataset.rkInstagram='true';
+      link.href='https://www.instagram.com/hernameis_rey/';
+      link.target='_blank';
+      link.rel='noreferrer';
+      link.className='contact-social';
+      link.setAttribute('aria-label','Instagram @hernameis_rey');
+      link.innerHTML='<span>Instagram · @hernameis_rey ↗</span>';
+      email.insertAdjacentElement('afterend',link);
+    }
+  }
+  document.querySelectorAll('footer a[href^="https://wa.me/"],footer [data-rk-social-links]').forEach(el=>el.remove());
 })();
+
+// Load isolated visual polish without touching portfolio content.
+const contactPolish=document.createElement('script');contactPolish.src='contact-polish.js';contactPolish.defer=true;document.head.appendChild(contactPolish);
