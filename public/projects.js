@@ -6,7 +6,7 @@ window.PORTFOLIO_PROJECTS={
   'the-private-letter':{title:'The Private Letter',category:'Email marketing / Client nurturing',stack:'Editorial strategy · Conversion · UX',url:'https://the-private-letter.onrender.com'},
   northstar:{title:'Northstar Retail Co.',category:'Product design',stack:'Retail systems',url:'https://northstar-retail-co.hatchable.site/'},
   solstice:{title:'Solstice Events Co.',category:'Product / UX',stack:'Event operations',url:'https://solstice-events-co.hatchable.site/'},
-  'northstar-ai':{title:'Northstar AI Support',category:'AI / Product',stack:'Support experience',url:'https://northstar-ai.hatchable.site/'},
+  'northstar-ai':{title:'Northstar AI Support',category:'AI / Product',stack:'Support experience',url:'https://northstar-ai-support.onrender.com'},
   reflex:{title:'Reflex Control Room',category:'Frontend / UX',stack:'React · Vite · TypeScript · CSS',url:'https://reflex-control-room01.onrender.com'},
   scroll:{title:'From Scroll to Sale',category:'Social + WhatsApp conversion',stack:'Social strategy · Direct response · Customer journey',url:'https://from-scroll-to-sale-5cwo.onrender.com'},
   'rey-s-palate':{title:"Rey's Palate",category:'Culinary / Private Dining & Ordering',stack:'Mood-based menus · Food ordering · Table reservations · Hospitality UX',url:'https://the-regina-table.onrender.com'},
