@@ -13,3 +13,5 @@
 /* Preserve the approved project titles beneath every card. */
 #work .project>h3{display:block!important;font-size:clamp(26px,3vw,42px)!important;line-height:1.05!important}
 .house-her-visual .flagship-art{background:url('https://images.pexels.com/photos/20562278/pexels-photo-20562278.jpeg?auto=compress&cs=tinysrgb&w=1800') center/cover!important}.house-her-visual .flagship-art>img{opacity:1!important}
+/* Hide broken-image alt text from appearing over the House of Her artwork. */
+#work .house-her-visual img{color:transparent!important;text-shadow:none!important}
