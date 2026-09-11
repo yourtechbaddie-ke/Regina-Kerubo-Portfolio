@@ -3,6 +3,33 @@
   const instagramUrl='https://www.instagram.com/hernameis_rey/';
   const whatsappUrl='https://wa.me/254706168307';
   const phoneRegex=/\+?254[\s-]?706[\s-]?168[\s-]?307/;
+  const footerCopy='© 2026 Regina Kerubo Shiholo • Built to feel alive';
+
+  const fixFooter=()=>{
+    const footer=document.querySelector('footer');
+    if(!footer)return;
+
+    footer.querySelectorAll('a[href^="https://wa.me/"], [data-rk-social-links]').forEach(el=>el.remove());
+
+    const walker=document.createTreeWalker(footer,NodeFilter.SHOW_TEXT);
+    const nodes=[];
+    let node;
+    while(node=walker.nextNode()) nodes.push(node);
+
+    const signatureNode=nodes.find(n=>/©\s*2026\s*Regina/i.test(n.nodeValue||'')||/Kerubo/i.test(n.nodeValue||'')||/Built\s*(with\s+intention|to\s+feel\s+alive)/i.test(n.nodeValue||''));
+    if(signatureNode){
+      const parent=signatureNode.parentElement;
+      if(parent){
+        parent.textContent='';
+        parent.appendChild(document.createTextNode('© 2026 Regina Kerubo Shiholo '));
+        const built=document.createElement('span');
+        built.className='rk-footer-built';
+        built.textContent='• Built to feel alive';
+        parent.appendChild(built);
+        parent.classList.add('rk-footer-signature');
+      }
+    }
+  };
 
   const applyPolish=()=>{
     const contact=document.querySelector('#contact');
@@ -43,21 +70,7 @@
         }
       }
     }
-
-    document.querySelectorAll('footer a[href^="https://wa.me/"],footer [data-rk-social-links]').forEach(el=>el.remove());
-
-    const footer=document.querySelector('footer');
-    if(footer){
-      const elements=[...footer.querySelectorAll('*')].filter(el=>{
-        const text=(el.textContent||'').replace(/\s+/g,' ').trim();
-        return /©\s*2026\s*Regina/i.test(text) && /Kerubo/i.test(text) && /Built/i.test(text);
-      });
-      const target=elements.sort((a,b)=>a.children.length-b.children.length)[0];
-      if(target){
-        target.innerHTML='© 2026 Regina Kerubo Shiholo <span class="rk-footer-built">• Built to feel alive</span>';
-        target.classList.add('rk-footer-signature');
-      }
-    }
+    fixFooter();
   };
 
   const style=document.createElement('style');
@@ -65,14 +78,14 @@
     .contact-social{display:inline-flex!important;align-items:center;gap:12px;margin-top:18px;margin-left:4px;padding:0!important;border:0!important;font:clamp(15px,1.55vw,20px) 'Playfair Display',serif;color:#f3e8dc;text-decoration:none;letter-spacing:.01em;transition:color .3s ease,transform .3s ease}
     .contact-social:hover{color:#c7ded9;transform:translateY(-2px)}
     .contact-whatsapp{margin-left:0}
-    .rk-footer-signature{display:inline-flex!important;align-items:baseline;gap:10px!important;font-family:'Playfair Display',serif!important;font-size:clamp(12px,1.1vw,16px)!important;font-weight:500!important;letter-spacing:.08em!important;color:#d8c6b7!important;line-height:1.7!important;text-transform:none!important;opacity:.94}
-    .rk-footer-signature .rk-footer-built{display:inline-block!important;margin-left:2px!important;white-space:nowrap!important;font-style:italic;letter-spacing:.06em;color:#efe1d4}
+    .rk-footer-signature{display:inline-flex!important;align-items:baseline;gap:8px!important;font-family:'Playfair Display',serif!important;font-size:clamp(12px,1.1vw,16px)!important;font-weight:500!important;letter-spacing:.08em!important;color:#d8c6b7!important;line-height:1.7!important;text-transform:none!important;opacity:.94}
+    .rk-footer-signature .rk-footer-built{display:inline-block!important;margin-left:0!important;white-space:nowrap!important;font-style:italic;letter-spacing:.06em;color:#efe1d4}
     @media(max-width:700px){.contact-social{display:flex!important;width:max-content;max-width:100%;margin-left:0}.rk-footer-signature{display:flex!important;flex-wrap:wrap;gap:5px!important;font-size:12px!important;letter-spacing:.05em!important}.rk-footer-signature .rk-footer-built{margin-left:0!important;letter-spacing:.04em}}
   `;
   document.head.appendChild(style);
 
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',applyPolish,{once:true});
-  else applyPolish();
-  setTimeout(applyPolish,500);
-  setTimeout(applyPolish,1500);
+  const run=()=>{applyPolish();setTimeout(fixFooter,250);};
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run,{once:true});else run();
+  setTimeout(run,500);setTimeout(run,1500);setTimeout(run,3000);
+  new MutationObserver(()=>fixFooter()).observe(document.body,{childList:true,subtree:true,characterData:true});
 })();
