@@ -1,0 +1,40 @@
+name: Portfolio contact and hero fix
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  fix-portfolio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply requested portfolio fixes
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('public/app.js')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace("alt:'Luxury bedroom interior inside the Private Jet Villa Boeing 737 in Bali'", "alt:'Luxury private jet villa interior in Bali'")
+          s = s.replace("alt:'Luxury bedroom interior inside the Private Jet Villa Boeing 737 in Bali'},", "alt:'Luxury private jet villa interior in Bali'},")
+          block = r'''\n// Contact links: make WhatsApp and Instagram directly tappable in the contact/footer area.\n(()=>{\n  const footer=document.querySelector('footer');\n  if(!footer || footer.querySelector('[data-rk-social-links]')) return;\n  const email=footer.querySelector('a[href^="mailto:"]');\n  const wrap=document.createElement('div');\n  wrap.dataset.rkSocialLinks='true';\n  wrap.style.cssText='display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:14px;';\n  wrap.innerHTML='<a href="https://wa.me/254706168307" target="_blank" rel="noreferrer" aria-label="WhatsApp Regina Kerubo">+254 706 168 307 ↗</a><a href="https://www.instagram.com/hernameis_rey/" target="_blank" rel="noreferrer" aria-label="Instagram hernameis_rey">Instagram · hernameis_rey ↗</a>';\n  if(email && email.parentElement) email.parentElement.appendChild(wrap);\n  else footer.appendChild(wrap);\n})();\n'''
+          if 'data-rk-social-links' not in s:
+              s += block
+          p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit generated fix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/app.js
+          if git diff --cached --quiet; then
+            echo "No changes needed"
+            exit 0
+          fi
+          git commit -m "Fix House of Her hero text and contact links"
+          git push
