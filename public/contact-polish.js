@@ -9,9 +9,9 @@
     const walker=document.createTreeWalker(footer,NodeFilter.SHOW_TEXT); const nodes=[]; let node;
     while(node=walker.nextNode())nodes.push(node);
     const signature=nodes.find(n=>/©\s*2026\s*Regina/i.test(n.nodeValue||'')||/Kerubo/i.test(n.nodeValue||'')||/Built\s*(with\s+intention|to\s+feel\s+alive)/i.test(n.nodeValue||''));
-    if(signature&&signature.parentElement){signature.parentElement.textContent='© 2026 Regina Kerubo Shiholo';signature.parentElement.classList.add('rk-footer-signature');}
+    if(signature&&signature.parentElement){signature.parentElement.textContent='© 2026 Regina Kerubo Shiholo • Built to feel alive';signature.parentElement.classList.add('rk-footer-signature');}
     footer.querySelectorAll('.rk-footer-built').forEach(el=>el.remove());
-    [...footer.querySelectorAll('*')].forEach(el=>{if(el.children.length===0&&/Built\s*(with\s+intention|to\s+feel\s+alive)/i.test(el.textContent||''))el.remove();});
+    [...footer.querySelectorAll('*')].forEach(el=>{if(el.children.length===0&&/Built\s+with\s+intention/i.test(el.textContent||''))el.remove();});
   };
   const applyPolish=()=>{
     const contact=document.querySelector('#contact');
