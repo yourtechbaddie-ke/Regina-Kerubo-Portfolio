@@ -53,7 +53,7 @@
   // WhatsApp must never appear in the footer.
   document.querySelectorAll('footer a[href^="https://wa.me/"],footer [data-rk-social-links]').forEach(el=>el.remove());
 
-  // Replace the footer signature with the exact elegant wording and treatment.
+  // Replace the footer signature with an explicit space between Kerubo and Built.
   const footer=document.querySelector('footer');
   if(footer){
     const walker=document.createTreeWalker(footer,NodeFilter.SHOW_TEXT);
@@ -63,7 +63,7 @@
       if(/©\s*2026\s*Regina\s*Kerubo\s*Built\s*with\s*intention\.?/i.test(textNode.nodeValue||'')){
         const signature=document.createElement('span');
         signature.className='rk-footer-signature';
-        signature.innerHTML='© 2026 Regina Kerubo <span>Built with intention.</span>';
+        signature.innerHTML='© 2026 Regina Kerubo&nbsp;<span>Built with intention.</span>';
         textNode.parentNode.replaceChild(signature,textNode);
       }
     });
