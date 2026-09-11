@@ -53,8 +53,8 @@
         return /©\s*2026\s*Regina/i.test(text) && /Kerubo/i.test(text) && /Built/i.test(text);
       });
       const target=elements.sort((a,b)=>a.children.length-b.children.length)[0];
-      if(target && !target.matches('.rk-footer-signature')){
-        target.innerHTML='© 2026 Regina Kerubo <span class="rk-footer-built">Built with intention.</span>';
+      if(target){
+        target.innerHTML='© 2026 Regina Kerubo Shiholo <span class="rk-footer-built">• Built to feel alive</span>';
         target.classList.add('rk-footer-signature');
       }
     }
@@ -66,8 +66,8 @@
     .contact-social:hover{color:#c7ded9;border-color:#c7ded9;transform:translateY(-2px)}
     .contact-whatsapp{margin-left:0}
     .rk-footer-signature{display:inline-flex!important;align-items:baseline;gap:10px!important;font-family:'Playfair Display',serif!important;font-size:clamp(12px,1.1vw,16px)!important;font-weight:500!important;letter-spacing:.08em!important;color:#d8c6b7!important;line-height:1.7!important;text-transform:none!important;opacity:.94}
-    .rk-footer-signature .rk-footer-built{display:inline-block!important;margin-left:8px!important;white-space:nowrap!important;font-style:italic;letter-spacing:.06em;color:#efe1d4}
-    @media(max-width:700px){.contact-social{display:flex!important;width:max-content;max-width:100%;margin-left:0}.rk-footer-signature{display:flex!important;flex-wrap:wrap;gap:5px!important;font-size:12px!important;letter-spacing:.05em!important}.rk-footer-signature .rk-footer-built{margin-left:4px!important;letter-spacing:.04em}}
+    .rk-footer-signature .rk-footer-built{display:inline-block!important;margin-left:2px!important;white-space:nowrap!important;font-style:italic;letter-spacing:.06em;color:#efe1d4}
+    @media(max-width:700px){.contact-social{display:flex!important;width:max-content;max-width:100%;margin-left:0}.rk-footer-signature{display:flex!important;flex-wrap:wrap;gap:5px!important;font-size:12px!important;letter-spacing:.05em!important}.rk-footer-signature .rk-footer-built{margin-left:0!important;letter-spacing:.04em}}
   `;
   document.head.appendChild(style);
 
