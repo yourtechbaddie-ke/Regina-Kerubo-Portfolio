@@ -3,56 +3,55 @@
 **Live website:** https://regina-kerubo-portfolio-static.onrender.com  
 **Repository:** https://github.com/yourtechbaddie-ke/Regina-Kerubo-Portfolio
 
-A personal portfolio and evolving business hub for Regina Kerubo. The site brings together professional experience, selected digital and creative projects, and pathways to explore Regina's business ventures. It is built as a static website and deployed on Render.
+A personal portfolio and evolving business hub for Regina Kerubo, bringing together professional experience, digital products, software and creative projects, and business ventures.
 
-## Website
+## Live website
 
-- **Live portfolio:** [regina-kerubo-portfolio-static.onrender.com](https://regina-kerubo-portfolio-static.onrender.com)
-- **Source code:** [yourtechbaddie-ke/Regina-Kerubo-Portfolio](https://github.com/yourtechbaddie-ke/Regina-Kerubo-Portfolio)
-- **Deployment:** Static site hosted on Render
-- **Main technologies:** HTML, CSS, JavaScript
+- **Portfolio:** [regina-kerubo-portfolio-static.onrender.com](https://regina-kerubo-portfolio-static.onrender.com)
+- **Source repository:** [yourtechbaddie-ke/Regina-Kerubo-Portfolio](https://github.com/yourtechbaddie-ke/Regina-Kerubo-Portfolio)
+- **Hosting:** Render
+- **Core technologies:** HTML, CSS and JavaScript
 
-## Portfolio project order
+## Featured portfolio — display order
 
-The featured projects are listed in the following order:
+The portfolio projects appear in this exact order on the website:
 
-1. **The Drop**
-2. **From Scroll to Sale**
-3. **REGINA × BRANDS**
-4. **The House of Her**
-5. **Ride or Die**
-6. **The Price of Passion**
-7. **The Private Letter**
-8. **Northstar Retail Co**
-9. **Solstice Events Co**
-10. **Northstar AI Support**
-11. **Aurelia Journeys**
-12. **Reflex Control Room**
-13. **Rey's Palate**
-14. **The Creator's Table**
+1. **The House of Her** — Personal digital experience
+2. **Ride or Die** — Game development and narrative
+3. **The Drop** — Sales and product launch campaign
+4. **The Price of Passion** — Memoir / autobiography *(writing in progress)*
+5. **The Private Letter** — Email marketing and client nurturing
+6. **Northstar Retail Co.** — Retail product design
+7. **Solstice Events Co.** — Event-management product concept
+8. **Northstar AI Support** — AI support experience
+9. **Aurelia Journeys** — Luxury travel digital experience
+10. **Reflex Control Room** — Frontend / readiness dashboard
+11. **From Scroll to Sale** — Social commerce and WhatsApp conversion
+12. **Rey's Palate** — Culinary, private dining and ordering experience
+13. **The Creator's Table** — UGC and influencer campaign concept
 
-This list documents the intended portfolio order. Individual projects may be concepts, prototypes, works in progress, or published work; their presentation should make their current status clear. Projects not listed here are intentionally excluded from the featured portfolio sequence.
+This sequence reflects the live portfolio's intended display order. The project descriptions and links should be used to understand each project's scope and current status; a portfolio listing alone does not imply that every project is a production-ready commercial service.
 
 ## Business hub direction
 
-The website is intended to act as a central online home for Regina's personal brand and ventures, while keeping each business's offer and identity clear. Relevant business areas include:
+The website also serves as a central online home for Regina's personal brand and ventures, while keeping each business's offer and visual identity distinct. Business areas include:
 
 - **Amour Privé** — luxury travel curation and trip inquiries.
-- **Digital growth and affiliate partnerships** — recommendations and promotions for tools, with clear affiliate disclosures.
-- **Technology and digital solutions** — software, AI and related digital project work.
-- **Creative work** — writing, storytelling, gaming concepts and content projects.
+- **Digital growth and affiliate partnerships** — tool recommendations and promotions, with clear affiliate disclosures.
+- **Technology and digital solutions** — websites, software, AI-enabled experiences and related digital work.
+- **Creative work** — writing, storytelling, game concepts and content projects.
 
-The README describes the intended business structure; it does not imply that every business has a dedicated landing page, booking system, payment flow or working inquiry form on the live site. Those features should be linked here as they are implemented and tested.
+The intended business-hub direction does not mean every business already has a dedicated page, booking flow, payment system or inquiry form on the live website. Document and link those features as they are implemented and tested.
 
 ## Design direction
 
-The main personal brand uses a premium, editorial direction with black cherry, forest green and alabaster tones. Individual ventures may retain their own brand identities—for example, Amour Privé's burgundy, gold and almond palette—rather than forcing every business into one visual style.
+The personal brand uses a premium editorial direction with black cherry, forest green and alabaster. Individual ventures retain their own appropriate identities—for example, Amour Privé's burgundy, gold and almond palette.
 
 ## Repository structure
 
-- `public/` — static website assets, stylesheets, scripts and site pages.
-- `apps/` — supporting project/app materials and design notes.
-- `package.json` — static-site serving script and dependency configuration.
+- `public/` — static site pages, stylesheets, JavaScript and other web assets.
+- `apps/` — supporting app/project materials and design notes.
+- `package.json` — project metadata and the static-site serving script.
 
 ## Run locally
 
@@ -63,11 +62,11 @@ npm install
 npm start
 ```
 
-The start script serves the `public/` directory on the port provided by the environment (or the configured local port).
+The start script serves the `public/` directory using the `serve` package and the port supplied by the environment.
 
 ## Deployment
 
-The site is configured as a static website served with the `serve` package. The approved live deployment is hosted on Render at the URL above.
+The site is configured as a static website served with `serve` and is hosted on Render at the live URL above.
 
 ---
 
