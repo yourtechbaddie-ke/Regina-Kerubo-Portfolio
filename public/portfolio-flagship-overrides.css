@@ -15,3 +15,44 @@
 .house-her-visual .flagship-art{background:url('https://images.pexels.com/photos/20562278/pexels-photo-20562278.jpeg?auto=compress&cs=tinysrgb&w=1800') center/cover!important}.house-her-visual .flagship-art>img{opacity:1!important}
 /* Hide broken-image alt text from appearing over the House of Her artwork. */
 #work .house-her-visual img{color:transparent!important;text-shadow:none!important}
+
+
+/* Full, readable desktop previews for the two flagship project screenshots. */
+#work .project-belle-amoura .project-visual,
+#work .project-az-cloud-recall .project-visual{
+  height:clamp(320px,42vw,560px)!important;
+  aspect-ratio:16/10!important;
+  overflow:hidden!important;
+  background:#111820!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:clamp(12px,2vw,28px)!important;
+}
+#work .project-belle-amoura .project-visual img,
+#work .project-az-cloud-recall .project-visual img{
+  position:relative!important;
+  inset:auto!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  opacity:1!important;
+  filter:none!important;
+  transform:none!important;
+  image-rendering:auto!important;
+}
+#work .project-belle-amoura .project-visual .flagship-image-shade,
+#work .project-az-cloud-recall .project-visual .flagship-image-shade{
+  display:none!important;
+}
+@media(max-width:700px){
+  #work .project-belle-amoura .project-visual,
+  #work .project-az-cloud-recall .project-visual{
+    height:clamp(280px,82vw,430px)!important;
+    padding:10px!important;
+  }
+}
