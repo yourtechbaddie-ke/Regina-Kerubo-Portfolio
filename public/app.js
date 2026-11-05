@@ -37,6 +37,8 @@ if(list){
   cards.forEach((c,i)=>{
     let el=byTitle.get(c.title);
     if(!el){el=document.createElement('article');el.className='project project-feature reveal';const visual=c.image?`<div class="project-visual"><img src="${c.image}" alt="${c.alt}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"><div class="flagship-image-shade"></div></div>`:`<div class="project-visual flagship-art"><span style="position:relative;z-index:2">${c.title.toUpperCase()}</span></div>`;const action=c.url?`<a href="${c.url}" target="_blank" rel="noreferrer" class="project-link">Enter ${c.title} ↗</a>`:`<div class="project-link" aria-label="${c.status}">${c.status}</div>`;el.innerHTML=`${visual}<div class="project-meta"><span></span><span>${c.stack}</span></div><h3>${c.title}</h3><p>${c.desc}</p>${action}`;byTitle.set(c.title,el);observer.observe(el)}
+    if(c.title==='The Belle Amoura Retreat')el.classList.add('project-belle-amoura');
+    if(c.title==='AZ Cloud Recall')el.classList.add('project-az-cloud-recall');
     const visual=el.querySelector('.project-visual');
     if(c.image&&visual){let img=visual.querySelector('img');if(!img){visual.innerHTML=`<img src="${c.image}" alt="${c.alt}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"><div class="flagship-image-shade"></div>`}else if(img.src!==c.image){img.src=c.image;img.alt=c.alt;img.loading='lazy'}}
     if(c.url){const link=el.querySelector('.project-link');if(link&&link.tagName==='A')link.href=c.url;else if(link&&c.title==='The Price of Passion'){link.outerHTML=`<div class="project-link" aria-label="Writing in Progress">Writing in Progress</div>`}}
